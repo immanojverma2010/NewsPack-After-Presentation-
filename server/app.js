@@ -60,6 +60,10 @@ function(req, res) {
 });
 
 
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/index.html'));
+});
+
 app.get('/logout', function(req, res){
 
   req.session.destroy(function (err) {
